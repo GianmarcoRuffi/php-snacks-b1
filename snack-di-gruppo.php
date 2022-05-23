@@ -266,10 +266,10 @@ Olimpia Milano - Cantù | 55-60 -->
 
         <!-- Utilizzare questo array: https://pastebin.com/CkX3680A. Stampiamo il nostro array mettendo gli insegnanti in un rettangolo grigio e i PM in un rettangolo verde.-->
 
-        <ul>
+      
             <?php foreach($db as $k => $v){?>
                 <?php echo $k?>
-                <li>
+                <div>
                     <?php foreach($v as $value){?>
 
                         <span class="<?php 
@@ -283,9 +283,9 @@ Olimpia Milano - Cantù | 55-60 -->
                         <p><?php echo $value['name'];?> <?php echo $value['lastname'];?></p>
                         
                     <?php }?>
-                </li>
+                </div>
             <?php } ?>
-        </ul>
+        
 
     </section>
 
@@ -298,7 +298,7 @@ Olimpia Milano - Cantù | 55-60 -->
         <ul>
             <?php for($i = 0; $i < count($classe); $i++){?>
             <li>
-                <span><?php echo $classe[$i]['nome'].' '.$classe[$i]['cognome'].' media voti: '.ceil(array_sum($classe[$i]['voti']) / count($classe[$i]['voti']))?></span>
+                <span><?php echo $classe[$i]['nome'].' '.$classe[$i]['cognome'].' <br> Media dei voti: '.ceil(array_sum($classe[$i]['voti']) / count($classe[$i]['voti']))?></span>
             </li>       
            <?php } ?>
         </ul>
