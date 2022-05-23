@@ -1,5 +1,7 @@
 <?php
 
+//// Snack 1
+
 $teams = [
     [
         'squadraCasa' => 'Cagliari',
@@ -21,6 +23,8 @@ $teams = [
     ]
 ];
 
+//// Snack 2
+
 $name = $_GET['name'];
 $mail = $_GET['mail'];
 $age= $_GET['age'];
@@ -31,6 +35,8 @@ if(empty($name) && empty($mail) && empty($age)){
 }else{
     $messaggio='Accesso Negato!';
 };
+
+//// Snack 3
 
 
 $posts = [
@@ -73,6 +79,8 @@ $posts = [
     ],
 ];
 
+//// Snack 4
+
 $numberArray=[];
 while(count($numberArray) < 15){
     $number = rand(1,30);
@@ -81,7 +89,20 @@ while(count($numberArray) < 15){
     }
 }
 
+//// Snack 5
+
+$paragraph="MAMP is a free, local server environment that can be installed under macOS and Windows with just a few clicks. MAMP provides them with all the tools they need to run WordPress on their desktop PC for testing or development purposes, for example. You can even easily test your projects on mobile devices. It does not matter whether you prefer the web server Apache or Nginx in addition to MySQL as database server, or whether you want to work with PHP, Python, Perl or Ruby. MAMP PRO 5 contains a wealth of new features and improvements to make your work as a web developer much easier and faster: Create snapshots, use the new PHP 8, benefit from the vastly improved editor, use the new hierarchical host list, group hosts, work withe the new Redis server. These are just some of the new great features in MAMP PRO 5. These are just some of the new features in MAMP PRO 5. With MAMP PRO you can create as many hosts as you want. Each host can be configured individually and thus adapted exactly to the target system. For example, choose if you need an Apache or NginX web server, which PHP version is needed, or if and which caching system is used. This allows you to work on your different projects in parallel without losing sight of the big picture."
+;
+ $paragraphPart=explode(',', $paragraph);
+
+ //// Snack 6
+
+
+
 ?>
+
+
+<!-- Html -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -112,7 +133,7 @@ while(count($numberArray) < 15){
             background: green;
         }
 
-        /* se si vuole aggiungere altro css è preferibile creare un file apparte */
+        /* se si vuole aggiungere altro css è preferibile creare un file a parte */
 
     </style>
     
@@ -122,6 +143,9 @@ while(count($numberArray) < 15){
     <section id="snack1">
         
         <h1> Snack 1 </h1>
+
+        <!-- Creiamo un array contenente le partite di basket di un’ipotetica tappa del calendario. Ogni array avrà una squadra di casa e una squadra ospite, punti fatti dalla squadra di casa e punti fatti dalla squadra ospite. Stampiamo a schermo tutte le partite con questo schema.
+Olimpia Milano - Cantù | 55-60 -->
 
         <ul>
         <?php for ($i = 0; $i < count($teams); $i++){
@@ -134,6 +158,8 @@ while(count($numberArray) < 15){
     <section id="snack2">
         
         <h1> Snack 2 </h1>
+
+        <!-- Passare come parametri GET name, mail e age e verificare (cercando i metodi che non conosciamo nella documentazione) che name sia più lungo di 3 caratteri, che mail contenga un punto e una chiocciola e che age sia un numero. Se tutto è ok stampare “Accesso riuscito”, altrimenti “Accesso negato” -->
 
         <p><?php echo $messaggio ?></p>
     </ul>
@@ -167,6 +193,9 @@ while(count($numberArray) < 15){
         
         <h1> Snack 4 </h1>
 
+        <!-- Creare un array con 15 numeri casuali, tenendo conto che l’array non dovrà contenere lo stesso numero più di una volta -->
+
+
         <?php var_dump($numberArray) ?>
 
     </section>
@@ -176,6 +205,11 @@ while(count($numberArray) < 15){
         <h1> Snack 5 </h1>
 
         <!-- Prendere un paragrafo abbastanza lungo, contenente diverse frasi. Prendere il paragrafo e suddividerlo in tanti paragrafi. Ogni punto un nuovo paragrafo. -->
+
+        <p><?php var_dump($paragraphPart)?></p>
+
+
+
 
     </section>
 
