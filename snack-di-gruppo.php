@@ -97,12 +97,59 @@ $paragraph="MAMP is a free, local server environment that can be installed under
 
  //// Snack 6
 
+ $db = [
+    'teachers' => [
+        [
+            'name' => 'Michele',
+            'lastname' => 'Papagni'
+        ],
+        [
+            'name' => 'Fabio',
+            'lastname' => 'Forghieri'
+        ]
+    ],
+    'pm' => [
+        [
+            'name' => 'Roberto',
+            'lastname' => 'Marazzini'
+        ],
+        [
+            'name' => 'Federico',
+            'lastname' => 'Pellegrini'
+        ]
+    ]
+];
+
+//// Snack 7
+
+$classe=[
+    [
+        'nome'=>'Francesco',
+        'cognome'=>'Ferrari',
+        'voti'=>[8,6,7,6,7,5,]
+    ],
+    [
+        'nome'=>'Dario',
+        'cognome'=>'Longo',
+        'voti'=>[6,7,6,5,6,6,]
+    ],
+    [
+        'nome'=>'Cristoforo',
+        'cognome'=>'Colombo',
+        'voti'=>[8,9,9,7,6,10,]
+    ],
+    [
+        'nome'=>'Jack',
+        'cognome'=>'Russo',
+        'voti'=>[4,3,6,7,2,5,]
+    ],
+];
 
 
 ?>
 
 
-<!-- Html -->
+<!---------------------------------------------- Html ---------------------------------------------->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -219,6 +266,27 @@ Olimpia Milano - Cantù | 55-60 -->
 
         <!-- Utilizzare questo array: https://pastebin.com/CkX3680A. Stampiamo il nostro array mettendo gli insegnanti in un rettangolo grigio e i PM in un rettangolo verde.-->
 
+        <ul>
+            <?php foreach($db as $k => $v){?>
+                <?php echo $k?>
+                <li>
+                    <?php foreach($v as $value){?>
+
+                        <span class="<?php 
+                            if($k === 'teachers'){
+                                echo 'grey';
+                            }else{
+                                echo 'green';
+                            };
+                            ?>">
+
+                        <p><?php echo $value['name'];?> <?php echo $value['lastname'];?></p>
+                        
+                    <?php }?>
+                </li>
+            <?php } ?>
+        </ul>
+
     </section>
 
     <section id="snack7">
@@ -226,6 +294,14 @@ Olimpia Milano - Cantù | 55-60 -->
         <h1> Snack 7 </h1>
 
         <!-- Creare un array contenente qualche alunno di un’ipotetica classe. Ogni alunno avrà Nome, Cognome e un array contenente i suoi voti scolastici. Stampare Nome, Cognome e la media dei voti di ogni alunno.-->
+
+        <ul>
+            <?php for($i = 0; $i < count($classe); $i++){?>
+            <li>
+                <span><?php echo $classe[$i]['nome'].' '.$classe[$i]['cognome'].' media voti: '.ceil(array_sum($classe[$i]['voti']) / count($classe[$i]['voti']))?></span>
+            </li>       
+           <?php } ?>
+        </ul>
 
     </section>
 
