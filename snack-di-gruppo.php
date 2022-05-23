@@ -4,22 +4,33 @@ $teams = [
     [
         'squadraCasa' => 'Cagliari',
         'squadraOspite' => 'Sassari',
-        'punteggioCasa' => 5,
-        'punteggioOspite' => 10,
+        'punteggioCasa' => 3,
+        'punteggioOspite' => 23,
     ],
     [
-        'squadraCasa' => 'Padova',
+        'squadraCasa' => 'Lakers',
         'squadraOspite' => 'Milano',
         'punteggioCasa' => 6,
-        'punteggioOspite' => 30,
+        'punteggioOspite' => 14,
     ],
     [
-        'squadraCasa' => 'torino',
-        'squadraOspite' => 'atalanta',
-        'punteggioCasa' => 5,
-        'punteggioOspite' => 10,
+        'squadraCasa' => 'Olimpia',
+        'squadraOspite' => 'Toronto',
+        'punteggioCasa' => 1,
+        'punteggioOspite' => 34,
     ]
 ];
+
+$name = $_GET['name'];
+$mail = $_GET['mail'];
+$age= $_GET['age'];
+if(empty($name) && empty($mail) && empty($age)){
+    $messaggio= 'Inserisci Credenziali';
+}elseif (strlen($name) > 3  && strpos($mail,'@') !== false && strpos($mail,'.') !== false && is_numeric($age)){
+    $messaggio='Accesso Consentito!';
+}else{
+    $messaggio='Accesso Negato!';
+};
 
 
 $posts = [
@@ -61,6 +72,14 @@ $posts = [
         ]
     ],
 ];
+
+$numberArray=[];
+while(count($numberArray) < 15){
+    $number = rand(1,30);
+    if(!in_array($number,$numberArray)){
+        $numberArray[] = $number;
+    }
+}
 
 ?>
 
@@ -116,7 +135,7 @@ $posts = [
         
         <h1> Snack 2 </h1>
 
-        <?php ?>
+        <p><?php echo $messaggio ?></p>
     </ul>
 
     </section>
@@ -148,7 +167,7 @@ $posts = [
         
         <h1> Snack 4 </h1>
 
-        <!-- Creare un array con 15 numeri casuali, tenendo conto che l’array non dovrà contenere lo stesso numero più di una volta -->
+        <?php var_dump($numberArray) ?>
 
     </section>
 
